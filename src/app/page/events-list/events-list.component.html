@@ -1,0 +1,31 @@
+<div>
+  <h3>All of the events should show below</h3>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of eventList | async">
+        <td>{{event.name}}</td>
+        <td>{{event.date}} </td>
+        <td>{{event.time}}</td>
+        <td>{{event.location.address}}, {{event.location.city}}, {{event.location.country}}</td>
+        <td>
+          <div class="btn-group">
+            <button [routerLink]="['event/' + event.id]" class="btn btn-info">
+              <i class="fa fa-pencil"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+  <div *ngIf="(event$ | async) as event" class="col-6 offset-3">
+    <form #eventForm="ngForm" (ngSubmit)="onUpdate(eventForm, event)">
+      <div class="form-group">
+        <label for="">Name</label>
+        <input name="name" [(ngModel)]="event.name" type="text"
+          class="form-control" pattern=".{8,}" required>
+        <div [hidden]="eventForm.controls.name?.valid" class="error-message">
+          The name must be minimum 8 characters.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Date</label>
+        <input name="date" [(ngModel)]="event.date" type="text"
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Time</label>
+        <input name="time" [(ngModel)]="event.time" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Country</label>
+        <input name="country" [(ngModel)]="event.location.country" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">City</label>
+        <input name="city" [(ngModel)]="event.location.city" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Address</label>
+        <input name="address" [(ngModel)]="event.location.address" type="text" class="form-control">
+      </div>
+
+      <button [disabled]="eventForm.invalid" type="submit" class="btn btn-primary btn-block btn-lg">
+        <i class="fa fa-save"></i>
+      </button>
+    </form>
+  </div>
+</div>
