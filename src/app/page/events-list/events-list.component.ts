@@ -17,6 +17,10 @@ export class EventsListComponent implements OnInit {
     private eventService: EventService,
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  onDelete(event: Event): void {
+    this.eventService.remove(event);
+  }
 
 }

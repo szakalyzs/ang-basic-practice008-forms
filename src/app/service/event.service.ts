@@ -52,7 +52,6 @@ export class EventService {
     if (ev) {
       return of(ev);
     }
-
     return of(new Event());
   }
 
@@ -62,4 +61,20 @@ export class EventService {
     this.getAll();
     return of(this.list[index]);
   }
+
+  create(event: Event): Observable<Event> {
+    event.id = this.list[this.list.length - 1].id + 1;
+    const index: number = this.list.push(event) - 1;
+    this.getAll();
+    return of(this.list[index]);
+  }
+  //The push() method returns the new array length
+
+  remove(event: Event): void{
+    const index: number = this.list.findIndex( item => item.id === event.id );
+    this.list.splice(index, 1);
+    this.getAll();
+    //return of(this.list);
+  }
+
 }

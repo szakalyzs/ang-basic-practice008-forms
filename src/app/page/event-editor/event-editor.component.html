@@ -1,34 +1,41 @@
 <div class="row">
   <div *ngIf="(event$ | async) as event" class="col-6 offset-3">
-    <form #eventForm="ngForm" (ngSubmit)="onUpdate(eventForm, event)">
+    <form #eventForm="ngForm" (ngSubmit)="onUpdate(event)">
       <div class="form-group">
-        <label for="">Name</label>
-        <input name="name" [(ngModel)]="event.name" type="text"
-          class="form-control" pattern=".{8,}" required>
-        <div [hidden]="eventForm.controls.name?.valid" class="error-message">
-          The name must be minimum 8 characters.
+        <label>Name</label>
+        <div [hidden]="eventForm.controls.name?.valid" class="error-message">... must be minimum 8 characters
         </div>
+        <input name="name" [(ngModel)]="event.name" type="text" class="form-control" pattern=".{8,25}" required>
       </div>
       <div class="form-group">
-        <label for="">Date</label>
-        <input name="date" [(ngModel)]="event.date" type="text"
-          class="form-control">
+        <label>Date</label>
+        <div [hidden]="eventForm.controls.date?.valid" class="error-message">... must be fit to english date format: mm/dd/yyyy
+        </div>
+        <input name="date" [(ngModel)]="event.date" type="text" class="form-control" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
       </div>
       <div class="form-group">
-        <label for="">Time</label>
-        <input name="time" [(ngModel)]="event.time" type="text" class="form-control">
+        <label>Time</label>
+        <div [hidden]="eventForm.controls.time?.valid" class="error-message">... must be fit to english time format: hham or hhpm
+        </div>
+        <input name="time" [(ngModel)]="event.time" type="text" class="form-control" pattern="^\d{2}(am|pm)$" required>
       </div>
       <div class="form-group">
-        <label for="">Country</label>
-        <input name="country" [(ngModel)]="event.location.country" type="text" class="form-control">
+        <label>Country</label>
+        <div [hidden]="eventForm.controls.country?.valid" class="error-message">... must be contains 5..25 uppercase characters only
+        </div>
+        <input name="country" [(ngModel)]="event.location.country" type="text" class="form-control" pattern="[A-Z]{5,25}" required>
       </div>
       <div class="form-group">
-        <label for="">City</label>
-        <input name="city" [(ngModel)]="event.location.city" type="text" class="form-control">
+        <label>City</label>
+        <div [hidden]="eventForm.controls.city?.valid" class="error-message">... must be contains 5..25 characters, starts with uppercase only
+        </div>
+        <input name="city" [(ngModel)]="event.location.city" type="text" class="form-control" pattern="^[A-Z]{1}[a-z]{4,24}$" required>
       </div>
       <div class="form-group">
-        <label for="">Address</label>
-        <input name="address" [(ngModel)]="event.location.address" type="text" class="form-control">
+        <label>Address</label>
+        <div [hidden]="eventForm.controls.address?.valid" class="error-message">... must be contains 10..50 characters
+        </div>
+        <input name="address" [(ngModel)]="event.location.address" type="text" class="form-control" pattern=".{10,50}" required>
       </div>
 
       <button [disabled]="eventForm.invalid" type="submit" class="btn btn-primary btn-block btn-lg">

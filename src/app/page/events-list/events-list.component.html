@@ -8,7 +8,11 @@
         <th>Date</th>
         <th>Time</th>
         <th>Address</th>
-        <th></th>
+        <th>
+          <button [routerLink]="['event/' + 0]" class="btn btn-block btn-success">
+            <i class="fa fa-plus"></i>
+          </button>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +25,9 @@
           <div class="btn-group">
             <button [routerLink]="['event/' + event.id]" class="btn btn-info">
               <i class="fa fa-pencil"></i>
+            </button>
+            <button (click)="onDelete(event)" class="btn btn-danger">
+              <i class="fa fa-trash"></i>
             </button>
           </div>
         </td>
