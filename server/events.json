@@ -12,17 +12,6 @@
       }
     },
     {
-      "id": 2,
-      "name": "Angular-nl",
-      "date": "04/15/2037",
-      "time": "09am",
-      "location": {
-        "address": "127 DT, Msdas",
-        "city": "Amsterdam",
-        "country": "NEDERLAND"
-      }
-    },
-    {
       "id": 3,
       "name": "ng-conf 2037",
       "date": "04/15/2037",
@@ -52,6 +41,17 @@
       "location": {
         "address": "Budafoki út 56. 3. emelet",
         "city": "Budapest",
+        "country": "HUNGARY"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Zsolt Szakály",
+      "date": "04/15/2035",
+      "time": "09am",
+      "location": {
+        "address": "Hansági u. 2.",
+        "city": "Kapuvár",
         "country": "HUNGARY"
       }
     }

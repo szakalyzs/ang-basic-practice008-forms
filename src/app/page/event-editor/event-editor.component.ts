@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs/operators';
 import { EventService } from 'src/app/service/event.service';
 import { Event } from 'src/app/model/event';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-event-editor',
@@ -23,11 +24,13 @@ export class EventEditorComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private eventService: EventService,
     private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {}
 
   onUpdate(event: Event): void {
+    this.eventService.showSuccess();
     if (event.id === 0) {
       this.eventService.create(event);
       this.router.navigate(['']);
@@ -36,6 +39,8 @@ export class EventEditorComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
+
+
 
   /* onUpdate(event: Event): void {
     if (event.id === 0) {

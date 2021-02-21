@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Event } from '../model/event';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +45,8 @@ export class EventService {
   list$: BehaviorSubject<Event[]> = new BehaviorSubject<Event[]>([]);
 
   constructor(
-    private http: HttpClient
-
+    private http: HttpClient,
+    private toastr: ToastrService
   ) { }
 
   getAll(): void {
@@ -79,6 +80,10 @@ export class EventService {
     this.http.delete<Event>(`${this.jsonUrl}/${event.id}`).subscribe(
       () => this.getAll()
     );
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!', {timeOut: 3000});
   }
 
   /* update(event: Event): Observable<Event> {
