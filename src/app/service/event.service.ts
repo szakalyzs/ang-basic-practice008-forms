@@ -82,8 +82,8 @@ export class EventService {
     );
   }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!', {timeOut: 3000});
+  showSuccess(text: string, title: string) {
+    this.toastr.success(text, title, {timeOut: 3000});
   }
 
   /* update(event: Event): Observable<Event> {

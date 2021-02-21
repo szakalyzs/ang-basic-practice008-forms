@@ -22,6 +22,10 @@ export class EventsListComponent implements OnInit {
   }
 
   onDelete(event: Event): void {
-    this.eventService.remove(event);
+    if (confirm(`Are you sure to delete ${event.name}?`)) {
+      const ev: string = event.name;
+      this.eventService.remove(event);
+      this.eventService.showSuccess('deleted successfuly.', ev);
+    }
   }
 }

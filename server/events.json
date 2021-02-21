@@ -26,7 +26,7 @@
       "id": 4,
       "name": "UN Angular Summit",
       "date": "06/10/2037",
-      "time": "08am",
+      "time": "08pm",
       "location": {
         "address": "The UN Angular Center",
         "city": "New York",
@@ -46,13 +46,13 @@
     },
     {
       "id": 6,
-      "name": "Zsolt Szakály",
-      "date": "04/15/2035",
-      "time": "09am",
+      "name": "JavaScript",
+      "date": "09/26/2026",
+      "time": "10am",
       "location": {
-        "address": "Hansági u. 2.",
-        "city": "Kapuvár",
-        "country": "HUNGARY"
+        "address": "Haupt platz 3.",
+        "city": "Passau",
+        "country": "GERMANY"
       }
     }
   ]
