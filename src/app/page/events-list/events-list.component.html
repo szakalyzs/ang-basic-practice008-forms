@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let event of eventList | async">
+      <tr *ngFor="let event of eventList$ | async">
         <td>{{event.name}}</td>
         <td>{{event.date}} </td>
         <td>{{event.time}}</td>

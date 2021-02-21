@@ -29,6 +29,16 @@ export class EventEditorComponent implements OnInit {
 
   onUpdate(event: Event): void {
     if (event.id === 0) {
+      this.eventService.create(event);
+      this.router.navigate(['']);
+    } else {
+      this.eventService.update(event);
+      this.router.navigate(['']);
+    }
+  }
+
+  /* onUpdate(event: Event): void {
+    if (event.id === 0) {
       this.eventService.create(event).subscribe(
         ev => this.router.navigate([''])
       );
@@ -37,5 +47,5 @@ export class EventEditorComponent implements OnInit {
         ev => this.router.navigate([''])
       );
     }
-  }
+  } */
 }

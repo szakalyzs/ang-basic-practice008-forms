@@ -10,17 +10,18 @@ import { EventService } from 'src/app/service/event.service';
 })
 export class EventsListComponent implements OnInit {
 
-  eventList: BehaviorSubject<Event[]> = this.eventService.list$;
+  eventList$: BehaviorSubject<Event[]> = this.eventService.list$;
   testEvent: Observable<Event> = this.eventService.get(1);
 
   constructor(
     private eventService: EventService,
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.eventService.getAll();
+  }
 
   onDelete(event: Event): void {
     this.eventService.remove(event);
   }
-
 }

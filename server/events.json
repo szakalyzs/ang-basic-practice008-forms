@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Angular Connect",
+      "date": "09/26/2036",
+      "time": "10am",
+      "location": {
+        "address": "1 London Rd",
+        "city": "London",
+        "country": "ENGLAND"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Angular-nl",
+      "date": "04/15/2037",
+      "time": "09am",
+      "location": {
+        "address": "127 DT, Msdas",
+        "city": "Amsterdam",
+        "country": "NEDERLAND"
+      }
+    },
+    {
+      "id": 3,
+      "name": "ng-conf 2037",
+      "date": "04/15/2037",
+      "time": "09am",
+      "location": {
+        "address": "The Palatial America Hotel",
+        "city": "Salt Lake City",
+        "country": "USAMERICA"
+      }
+    },
+    {
+      "id": 4,
+      "name": "UN Angular Summit",
+      "date": "06/10/2037",
+      "time": "08am",
+      "location": {
+        "address": "The UN Angular Center",
+        "city": "New York",
+        "country": "USAMERICA"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Angular Training 360",
+      "date": "02/22/2021",
+      "time": "09am",
+      "location": {
+        "address": "Budafoki út 56. 3. emelet",
+        "city": "Budapest",
+        "country": "HUNGARY"
+      }
+    }
+  ]
+}
